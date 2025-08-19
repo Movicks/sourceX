@@ -1,15 +1,51 @@
 @import "tailwindcss";
+@import '../assets/css/hoverStyles.css';
 
 :root {
   --background: #0f172a;
   --foreground: #ffffff;
-}
+  --primary: rgba(59, 130, 246, 0.8);
 
+  /* sizing */
+  --spacing-sections: calc(var(--spacing) * 8);
+  --spacing-medium: calc(var(--spacing) * 16);
+  --spacing-peers: calc(var(--spacing) * 8);
+  --spacing-small: calc(var(--spacing) * 4);
+  --spacing-xtrasmall: calc(var(--spacing) * 2);
+  --spacing-container: calc(var(--spacing) * 4);
+
+}
+@media (width >= 40rem) {
+  :root {
+    --spacing-container: calc(var(--spacing) * 8);
+    --spacing-sections: calc(var(--spacing) * 15);
+    --spacing-medium: calc(var(--spacing) * 8);
+    --spacing-peers: calc(var(--spacing) * 4);
+    --spacing-small: calc(var(--spacing) * 2);
+    --spacing-xtrasmall: calc(var(--spacing) * 1);
+  }
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --animate-bounce-self: bounce-self 0.5s ease-out;
+  
+
+  --spacing-sections: var(--spacing-sections);
+  --spacing-peers: var(--spacing-peers);
+  --spacing-container: var(--spacing-container);
+
+  --spacing-small: var(--spacing-small);
+  --spacing-xtrasmall: var(--spacing-xtrasmall);
+  --spacing-medium: var(--spacing-medium);
+
+  --leading-medium: 160%;
+  --leading-xtrasmall: 120%;
+  --leading-small: 140%;
+  --leading-large: 180%;
 }
 
 body {
@@ -25,16 +61,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: rgb(30, 41, 59);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: rgb(71, 85, 105);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: rgb(101, 117, 139);
 }
 
 /* Glow effects */
@@ -57,7 +93,7 @@ body {
 /* Neon beam animations */
 .neon-beam-main {
   animation: neon-flicker 2s ease-in-out infinite alternate, neon-pulse 1.5s ease-in-out infinite;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 10px color-mix(in oklab, var(--primary) 80%, transparent), 0 0 20px color-mix(in oklab, var(--primary) 60%, transparent), 0 0 30px color-mix(in oklab, var(--primary) 40%, transparent);
 }
 
 .neon-glow-1 {
@@ -168,14 +204,12 @@ body {
 /* Focus styles */
 button:focus-visible,
 input:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
+  @apply outline-primary outline-2 outline-solid outline-offset-2;
 }
 
 /* Selection styles */
 ::selection {
-  background-color: rgba(59, 130, 246, 0.3);
-  color: white;
+  @apply text-white bg-primary/30;
 }
 
 /* Particle animations */
@@ -219,6 +253,27 @@ input:focus-visible {
   }
   100% {
     transform: translateX(0);
+  }
+}
+@keyframes bounce-self {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    /* vertical squeeze */
+    transform: scaleY(0.8);
+  }
+  40% {
+    /* horizontal squeeze */
+    transform: scaleX(0.8);
+  }
+  60% {
+    /* both axes expand (“pop”) */
+    transform: scale(1.2);
+  }
+  100% {
+    /* back to normal */
+    transform: scale(1);
   }
 }
 

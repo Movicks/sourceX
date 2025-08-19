@@ -1,0 +1,10 @@
+.tos-pp-list li{
+    @apply text-foreground/60 duration-300;
+}
+.tos-pp-list li:hover{
+    @apply underline text-foreground;
+}
+.social-icons .social-icon:hover{
+    --fg-color: var(--color-primary);
+    @apply animate-bounce-self duration-300;
+}
