@@ -1,21 +1,119 @@
 @import "tailwindcss";
+@import "../assets/css/hoverStyles.css";
 
 :root {
-  --background: #0f172a;
-  --foreground: #ffffff;
+  --spacing: 0.25rem; /* 4px base unit */
+
+  /* Mobile-first defaults */
+  --spacing-container: calc(var(--spacing) * 4);     /* 1rem */
+  --spacing-sections: calc(var(--spacing) * 8);      /* 2rem */
+  --spacing-medium: calc(var(--spacing) * 6);        /* 1.5rem */
+  --spacing-peers: calc(var(--spacing) * 4);         /* 1rem */
+  --spacing-small: calc(var(--spacing) * 2);         /* 0.5rem */
+  --spacing-xtrasmall: calc(var(--spacing) * 1);     /* 0.25rem */
 }
 
+@media (min-width: 40rem) {
+  :root {
+    --spacing-container: calc(var(--spacing) * 10);   /* 2.5rem */
+    --spacing-sections: calc(var(--spacing) * 18);    /* 4.5rem */
+    --spacing-medium: calc(var(--spacing) * 8);       /* 2rem */
+    --spacing-peers: calc(var(--spacing) * 6);        /* 1.5rem */
+    --spacing-small: calc(var(--spacing) * 3);        /* 0.75rem */
+    --spacing-xtrasmall: calc(var(--spacing) * 2);    /* 0.5rem */
+  }
+}
+:root {
+  /* Core Backgrounds & Text */
+  --background: #0e0e10;          /* Deep black for focus and clarity */
+  --foreground: #f5f5f7;          /* High-contrast soft white for readability */
+
+  /* Brand Primary (CTAs, Links) */
+  --primary: #5c5cff;             /* Sharp cobalt, distinct and modern */
+  --primary-foreground: #ffffff;  /* White text on primary */
+
+  /* Secondary (Cards, Panels) */
+  --secondary: #1c1c21;           /* Subtle dark tone for surfaces */
+  --secondary-foreground: #d1d1d6;
+
+  /* Accent (Borders, UI Highlights) */
+  --accent: #2f2f35;              /* Slight lift from base for layered depth */
+  --accent-foreground: #f5f5f7;
+
+  /* Status Colors (Trust + Metrics) */
+  --success: #3dd68c;
+  --success-foreground: #000000;
+
+  --warning: #facc15;
+  --warning-foreground: #1c1c21;
+
+  --destructive: #ff5f56;
+  --destructive-foreground: #ffffff;
+
+  /* UI Neutrals */
+  --muted: #2c2c30;
+  --muted-foreground: #a1a1aa;
+
+  --ring: #5c5cff; /* Input focus & elevation */
+}
+
+
 @theme inline {
+  /* Tokens from root */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-ring: var(--ring);
+
+  /* Typography */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Animation */
+  --animate-bounce-self: bounce-self 0.5s ease-out;
+
+  /* Spacing */
+  --spacing-sections: var(--spacing-sections);
+  --spacing-peers: var(--spacing-peers);
+  --spacing-container: var(--spacing-container);
+  --spacing-small: var(--spacing-small);
+  --spacing-xtrasmall: var(--spacing-xtrasmall);
+  --spacing-medium: var(--spacing-medium);
+
+  /* Line Heights */
+  --leading-medium: 160%;
+  --leading-xtrasmall: 120%;
+  --leading-small: 140%;
+  --leading-large: 180%;
 }
+
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
   overflow-x: hidden;
 }
 
@@ -25,16 +123,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: rgb(30, 41, 59);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: rgb(71, 85, 105);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: rgb(101, 117, 139);
 }
 
 /* Glow effects */
@@ -56,16 +154,21 @@ body {
 
 /* Neon beam animations */
 .neon-beam-main {
-  animation: neon-flicker 2s ease-in-out infinite alternate, neon-pulse 1.5s ease-in-out infinite;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.4);
+  animation: neon-flicker 2s ease-in-out infinite alternate,
+    neon-pulse 1.5s ease-in-out infinite;
+  box-shadow: 0 0 10px color-mix(in oklab, var(--primary) 80%, transparent),
+    0 0 20px color-mix(in oklab, var(--primary) 60%, transparent),
+    0 0 30px color-mix(in oklab, var(--primary) 40%, transparent);
 }
 
 .neon-glow-1 {
-  animation: neon-shimmer 3s ease-in-out infinite, neon-pulse 2s ease-in-out infinite;
+  animation: neon-shimmer 3s ease-in-out infinite,
+    neon-pulse 2s ease-in-out infinite;
 }
 
 .neon-glow-2 {
-  animation: neon-wave 4s ease-in-out infinite, neon-breathe 3s ease-in-out infinite;
+  animation: neon-wave 4s ease-in-out infinite,
+    neon-breathe 3s ease-in-out infinite;
 }
 
 .neon-glow-3 {
@@ -73,7 +176,8 @@ body {
 }
 
 @keyframes neon-flicker {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     filter: brightness(1);
   }
@@ -92,7 +196,8 @@ body {
 }
 
 @keyframes neon-pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scaleY(1) scaleX(1);
     opacity: 0.8;
   }
@@ -103,7 +208,8 @@ body {
 }
 
 @keyframes neon-shimmer {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.6;
     filter: hue-rotate(0deg);
   }
@@ -118,7 +224,8 @@ body {
 }
 
 @keyframes neon-wave {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.4;
     transform: scaleX(1);
   }
@@ -129,7 +236,8 @@ body {
 }
 
 @keyframes neon-breathe {
-  0%, 100% {
+  0%,
+  100% {
     filter: brightness(1);
   }
   50% {
@@ -138,7 +246,8 @@ body {
 }
 
 @keyframes neon-drift {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.2;
     transform: scaleX(1) scaleY(1);
   }
@@ -160,7 +269,9 @@ body {
 
 /* Smooth transitions */
 * {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -168,14 +279,12 @@ body {
 /* Focus styles */
 button:focus-visible,
 input:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
+  @apply outline-primary outline-2 outline-solid outline-offset-2;
 }
 
 /* Selection styles */
 ::selection {
-  background-color: rgba(59, 130, 246, 0.3);
-  color: white;
+  @apply text-white bg-primary/30;
 }
 
 /* Particle animations */
@@ -197,7 +306,8 @@ input:focus-visible {
 }
 
 @keyframes particle-twinkle {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.2;
     transform: scale(1);
   }
@@ -221,7 +331,30 @@ input:focus-visible {
     transform: translateX(0);
   }
 }
+@keyframes bounce-self {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    /* vertical squeeze */
+    transform: scaleY(0.8);
+  }
+  40% {
+    /* horizontal squeeze */
+    transform: scaleX(0.8);
+  }
+  60% {
+    /* both axes expand (“pop”) */
+    transform: scale(1.2);
+  }
+  100% {
+    /* back to normal */
+    transform: scale(1);
+  }
+}
 
 .particle-animate {
-  animation: particle-float 20s linear infinite, particle-twinkle 3s ease-in-out infinite, particle-drift 8s ease-in-out infinite;
+  animation: particle-float 20s linear infinite,
+    particle-twinkle 3s ease-in-out infinite,
+    particle-drift 8s ease-in-out infinite;
 }

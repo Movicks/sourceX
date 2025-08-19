@@ -4,6 +4,8 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import Footer from '@/components/Footer';
+import BookDemo from '@/components/BookDemo';
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -23,6 +25,8 @@ export default function Home() {
     <div ref={containerRef} className="text-white overflow-hidden">
       <Header />
       <HeroSection />
+      <BookDemo/>
+      <Footer/>
     </div>
   );
 }
