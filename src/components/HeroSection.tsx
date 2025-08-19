@@ -169,7 +169,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-2xl md:text-4xl lg:text-6xl font-bold mb-3 md:mb-6 leading-tight mt-30 lg:mt-50 text-center md:text-start"
+          className="text-2xl md:text-4xl lg:text-[3.5rem] font-bold mb-5 md:mb-6 leading-tight mt-30 md:mt-50 lg:mt-40 xl:mt-35 text-center md:text-start"
         >
           <span className="block bg-gradient-to-r from-blue-500 via-blue-100 to-white bg-clip-text text-transparent">
             The AI Transformation Partner<br className='hidden lg:block'/> Your Competition Fears
@@ -180,9 +180,18 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-lg md:text-xl text-gray-300 mb-3 md:mb-6 leading-relaxed text-center md:text-start"
+          className="text-lg md:text-xl text-gray-400 mb-5 md:mb-6 leading-relaxed text-center md:text-start"
         >
-          <span className='max-w-[30rem] whitespace-break-spaces lg:text-2xl'>We audit your workflows, build custom AI solutions, and deliver <br className='hidden lg:block'/>measurable ROI - making you the most efficient and profitable <br className='hidden lg:block'/>version of your business.</span>
+          <span className='max-w-[30rem] whitespace-break-spaces lg:text-[1.4rem]'>We audit your workflows, build custom AI solutions, and deliver <br className='hidden lg:block'/>measurable ROI - making you the most efficient and profitable <br className='hidden lg:block'/>version of your business.</span>
+        </motion.p>
+
+        <motion.p 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="text-lg md:text-xl text-gray-400 mb-5 md:mb-6 leading-relaxed text-center md:text-start"
+        >
+          <span className='max-w-[30rem] whitespace-break-spaces lg:text-[1.4rem]'>“Not just another AI automation agency. We are your competitive advantage.”</span>
         </motion.p>
         
         <motion.div 
@@ -192,18 +201,18 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row gap-3 items-center"
         >
           <motion.button whileTap={{ scale: 0.95 }} onMouseMove={ handleMouseMove } className="relative w-full lg:max-w-[18rem] h-[3rem] flex items-center justify-center text-black gap-8 overflow-hidden rounded-tl-full rounded-br-full px-4 py-1 bg-gray-200 font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
-            <span className="md:text-black">See Results</span>
+            <span className="md:text-black">SEE RESULTS</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform md:text-black" />
           </motion.button>
           <motion.button whileTap={{ scale: 0.95 }} onMouseMove={ handleMouseMove } className="relative w-full lg:max-w-[18rem] h-[3.1rem] flex items-center justify-center bg-gray-200 text-black md:bg-[#000204] md:border-2 border-blue-900/80 md:text-white gap-8 overflow-hidden rounded-tl-full rounded-br-full px-4 py-3 font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
-            <span className="md:text-white">Get My Free AI Audit</span>
+            <span className="md:text-white uppercase">Get My Free AI Audit</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform md:text-white" />
           </motion.button>
         </motion.div>
         
         {/* Visual Montage */}
         <div
-          className="mt-20 relative"
+          className="xl:mt-20 xl:mb-10 relative hidden xl:block"
         >
           <div className="flex justify-end items-start xl:-mt-12 bg-transparent max-w-[55rem] xl:min-w-[63.3rem] xl:max-w-[63.3rem] rounded-xl">
           <DashboardPreview />
