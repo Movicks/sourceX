@@ -42,11 +42,11 @@ const Header = () => {
         <motion.div 
           className={`flex items-center space-x-2 rounded-tl-full rounded-br-full px-3 py-2 lg:px-13 
             transition-all duration-600 ease-in-out
-            ${isScrolled ? "border-2 border-blue-900/80 bg-[#000204] px-8 lg:px-13" : "bg-transparent"}`}
+            ${isScrolled ? "border-2 border-blue-900/80 bg-[#000204] lg:px-13 overflow-hidden" : "border-2 border-blue-900/80 lg:border-none overflow-hidden bg-[#000204] lg:bg-transparent"}`}
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <Image src="/icons/webLogo.jpg" width={200} height={20} alt='logo' />
+          <Image src="/icons/webLogo.jpg" width={200} height={20} alt='logo' className='max-w-[10rem] lg:min-w-[15rem]' />
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -118,7 +118,7 @@ const Header = () => {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                <motion.div 
-                  className={`flex items-center space-x-2 py-2 lg:py-2  border-2 border-blue-900/80 bg-[#000204] px-8 lg:px-13 
+                  className={`flex items-center space-x-2 lg:py-2 -ml-2 lg:px-13 
                     transition-all duration-600 ease-in-out`}
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
