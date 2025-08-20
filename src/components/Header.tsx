@@ -123,7 +123,7 @@ const Header = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <Image src="/icons/webLogo.jpg" width={200} height={20} alt='logo' />
+                  <Image src="/icons/weblogo.jpg" width={200} height={20} alt='logo' />
                 </motion.div>
               </motion.div>
               
