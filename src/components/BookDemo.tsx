@@ -13,8 +13,8 @@ function BookDemoGridItem({data}:{data:{
 }
 export default function BookDemo() {
   return (
-    <section className="w-full relative isolate px-peers md:px-container pb-container flex justify-center before:h-1/2 before:absolute before:bg-secondary before:w-full before:left-0 before:bottom-0 before:-z-1">
-      <main className="w-full max-w-5xl bg-accent isolate shadow-md shadow-background/30 p-sections sm:p-container md:p-sections rounded-xl grid gap-peers grid-cols-1 sm:grid-cols-[1fr_1fr] lg:grid-cols-[3fr_2fr] items-center">
+    <section className="w-full relative isolate px-peers md:px-container pb-container flex justify-center before:h-1/2 before:absolute before:bg-primary before:w-full before:left-0 before:bottom-0 before:-z-1">
+      <main className="w-full max-w-6xl bg-accent isolate shadow-md shadow-background/30 p-sections sm:p-container md:p-sections rounded-xl grid gap-peers grid-cols-1 sm:grid-cols-[1fr_1fr] lg:grid-cols-[3fr_2fr] items-center">
         {/* content */}
         <div className="w-full flex flex-col gap-peers">
           <h3 className="text-3xl md:text-4xl font-bold">
