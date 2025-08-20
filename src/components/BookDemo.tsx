@@ -24,7 +24,7 @@ export default function BookDemo() {
           <p className="text-muted-foreground">
             Zero Engineering Lift | 100+ integrations | Multi-LLM architecture
           </p>
-          <button className="book-demo-btn px-6 py-3 mt-peers cursor-pointer active:scale-95 scale-100 duration-300 w-fit border-secondary border-2 bg-primary text-primary-foreground text-base sm:text-lg font-bold rounded-full flex items-center justify-center gap-small">
+          <button className="book-demo-btn px-6 py-3 mb-3 mt-peers cursor-pointer active:scale-95 scale-100 duration-300 w-fit border-secondary border-2 bg-primary text-primary-foreground text-base sm:text-lg font-bold rounded-full flex items-center justify-center gap-small">
             <span>Book a demo</span>
             <span className="size-5 sm:size-6">
               <NotebookPenIcon className="size-full" />
