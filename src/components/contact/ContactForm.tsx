@@ -85,13 +85,21 @@ export function ContactForm({
       setStatus("success");
       setServerMessage("Thanks! We’ll reach out shortly to schedule your demo.");
       reset();
-    } catch (err: any) {
+    } catch (err: unknown) {
       setStatus("error");
-      setServerMessage(
-        err?.name === "AbortError"
-          ? "Network timeout. Please check your connection and try again."
-          : err?.message || "Something went wrong. Please try again."
-      );
+    
+      // Narrow err safely
+      let message = "Something went wrong. Please try again.";
+    
+      if (err && typeof err === "object" && "name" in err && "message" in err) {
+        const e = err as { name: string; message: string };
+        message =
+          e.name === "AbortError"
+            ? "Network timeout. Please check your connection and try again."
+            : e.message || message;
+      }
+    
+      setServerMessage(message);
     }
   }
 
