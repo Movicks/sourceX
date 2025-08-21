@@ -358,3 +358,62 @@ input:focus-visible {
     particle-twinkle 3s ease-in-out infinite,
     particle-drift 8s ease-in-out infinite;
 }
+
+/* .text-header{
+  background-color: linear-gradient(to right, #5c5cff, #b3b3f5, white);
+  background-clip: text;
+} */
+
+.gradient-headers {
+  background: linear-gradient(
+    90deg,
+    #3a61fc,   /* deep blue */
+    #6c5dfc,   /* royal purple */
+    #cdd7ff,   /* light shimmer */
+    #fefefe    /* soft white highlight */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* text-transform: uppercase; */
+  /* letter-spacing: 1px; */
+}
+
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #3a61fc,
+    #cdd7ff,
+    #ffffff,
+    #cdd7ff,
+    #3a61fc
+  );
+  background-size: 250% 150%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 10s linear infinite;
+  /* letter-spacing: 1px; */
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -200% 20;
+  }
+}
+
+/* @media (min-width: 100px) {
+  .Heading {
+    margin-top: 9rem;
+  }
+}
+
+@media (min-width: 818px) {
+  .Heading {
+    margin-top: 11rem;
+  }
+} */

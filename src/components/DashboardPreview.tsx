@@ -42,7 +42,7 @@ const DashboardPreview = () => {
     <section className="relative">
       <motion.div 
         ref={dashboardRef}
-        className="max-w-6xl mx-auto"
+        className="w-full mx-auto"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.1 }}
@@ -73,7 +73,7 @@ const DashboardPreview = () => {
           {/* Dashboard Content */}
           <div className="flex">
             {/* Sidebar */}
-            <div className="w-64 bg-slate-900/50 border-r border-slate-700/50 p-4">
+            <div className="w-44 lg:w-64 bg-slate-900/50 border-r border-slate-700/50 p-4">
               <div className="space-y-3">
                 <div className="text-gray-300 text-sm font-medium">Issues</div>
                 <div className="space-y-2">
@@ -147,7 +147,7 @@ const DashboardPreview = () => {
                         <span className="text-gray-400 text-xs md:text-sm font-mono">{issue.id}</span>
                         <span className="text-white">{issue.title}</span>
                       </div>
-                      <div className="flex items-center space-x-3">
+                      <div className="flex items-center space-x-3 whitespace-nowrap">
                         <span className={`px-2 py-1 rounded-full text-xs ${
                           issue.status === 'Done' ? 'bg-green-500/20 text-green-400' :
                           issue.status === 'In Progress' ? 'bg-blue-500/20 text-blue-400' :

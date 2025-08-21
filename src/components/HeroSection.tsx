@@ -169,9 +169,9 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-2xl md:text-4xl lg:text-[3.5rem] font-bold mb-5 md:mb-6 leading-tight mt-30 md:mt-50 lg:mt-40 xl:mt-35 text-center md:text-start"
+          className="text-[1.9rem] md:text-5xl xl:text-[3.5rem] Heading font-bold mb-5 md:mb-6 leading-tight mt-31 lg:mt-33 xl:mt-35 text-center lg:text-start"
         >
-          <span className="block bg-gradient-to-r from-blue-500 via-blue-100 to-white bg-clip-text text-transparent">
+          <span className="block gradient-text bg-clip-text text-transparent">
             The AI Transformation Partner<br className='hidden lg:block'/> Your Competition Fears
           </span>
         </motion.h1>
@@ -180,7 +180,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-lg md:text-xl text-gray-400 mb-5 md:mb-6 leading-relaxed text-center md:text-start"
+          className="text-lg md:text-xl lg:text-md xl:text-xl text-gray-400 mb-5 md:mb-6 leading-relaxed text-center lg:text-start"
         >
           <span className='max-w-[30rem] whitespace-break-spaces lg:text-[1.4rem]'>We audit your workflows, build custom AI solutions, and deliver <br className='hidden lg:block'/>measurable ROI - making you the most efficient and profitable <br className='hidden lg:block'/>version of your business.</span>
         </motion.p>
@@ -189,7 +189,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-lg md:text-xl text-gray-400 mb-5 md:mb-6 leading-relaxed text-center md:text-start"
+          className="text-lg md:text-xl lg:text-md xl:text-xl text-gray-400 mb-5 md:mb-6 leading-relaxed text-center lg:text-start"
         >
           <span className='max-w-[30rem] whitespace-break-spaces lg:text-[1.4rem]'>“Not just another AI automation agency. We are your competitive advantage.”</span>
         </motion.p>
@@ -212,9 +212,9 @@ const HeroSection = () => {
         
         {/* Visual Montage */}
         <div
-          className="xl:mt-20 xl:mb-10 relative hidden xl:block"
+          className="md:mt-10 xl:mt-20 xl:mb-10 relative hidden md:block"
         >
-          <div className="flex justify-end items-start xl:-mt-12 bg-transparent max-w-[55rem] xl:min-w-[63.3rem] xl:max-w-[63.3rem] rounded-xl">
+          <div className="flex justify-center xl:justify-end items-start xl:-mt-12 bg-scondary max-w-[75rem] xl:min-w-[63.3rem] xl:max-w-[63.3rem] rounded-xl">
           <DashboardPreview />
           </div>
         </div>

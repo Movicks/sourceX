@@ -40,19 +40,19 @@ const Header = () => {
         
         {/* Logo */}
         <motion.div 
-          className={`flex items-center space-x-2 rounded-tl-full rounded-br-full px-3 py-2 lg:px-13 lg:py-1 
+          className={`flex items-center rounded-tl-full rounded-br-full px-3 py-2 lg:px-13 lg:py-1 
             transition-all duration-600 ease-in-out
             ${isScrolled ? "border-2 border-blue-900/80 bg-[#000204] lg:px-13 overflow-hidden" : "border-2 border-blue-900/80 lg:border-none overflow-hidden bg-[#000204] lg:bg-transparent"}`}
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <Image src="/icons/weblogo.jpg" width={200} height={20} alt='logo' className='max-w-[10rem] lg:min-w-[15rem]' />
+          <Image src="/icons/weblogo.jpg" width={200} height={20} alt='logo' className='max-w-[10rem] md:min-w-[13rem] lg:min-w-[15rem]' />
         </motion.div>
 
         {/* Desktop Navigation */}
         <nav 
           className={`hidden md:flex items-center justify-center text-md space-x-8 rounded-tl-full rounded-br-full 
-            lg:px-13 py-5 lg:py-3 text-center 
+            md:px-8 lg:px-13 py-5 lg:py-3 text-center 
             transition-all duration-600 ease-in-out
             ${isScrolled ? "border-2 border-blue-900/80 bg-[#000204]" : "bg-transparent"}`}
         >
