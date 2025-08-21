@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ArrowRight } from 'lucide-react';
 import DashboardPreview from './DashboardPreview';
+import AnimatedButton from './AnimatedButton';
 
 const HeroSection = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -169,41 +170,46 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-[1.9rem] md:text-5xl xl:text-[3.5rem] Heading font-bold mb-5 md:mb-6 leading-tight mt-31 lg:mt-33 xl:mt-35 text-center lg:text-start"
+          className="text-[1.9rem] md:text-5xl xl:text-[3.5rem] Heading font-bold mb-5 md:mb-3 2xl:mb-6 leading-tight mt-31 lg:mt-40 2xl:mt-35 text-center 2xl:text-start"
         >
-          <span className="block gradient-text bg-clip-text text-transparent">
+          <p className="font-semibold leading-tight tracking-tight text-gray-900 dark:text-white">
+              <span className="bg-gradient-to-r from-indigo-500 via-sky-400 to-emerald-400 bg-clip-text text-transparent">
+              The AI Transformation Partner<br className='hidden lg:block'/> Your Competition Fears
+              </span>
+          </p>
+          {/* <span className="block gradient-text bg-clip-text text-transparent">
             The AI Transformation Partner<br className='hidden lg:block'/> Your Competition Fears
-          </span>
+          </span> */}
         </motion.h1>
         
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-lg md:text-xl lg:text-md xl:text-xl text-gray-400 mb-5 md:mb-6 leading-relaxed text-center lg:text-start"
+          className="text-lg md:text-xl lg:text-md xl:text-xl text-gray-400 mb-5 md:mb-3 2xl:mb-6 leading-relaxed text-center 2xl:text-start"
         >
-          <span className='max-w-[30rem] whitespace-break-spaces lg:text-[1.4rem]'>We audit your workflows, build custom AI solutions, and deliver <br className='hidden lg:block'/>measurable ROI - making you the most efficient and profitable <br className='hidden lg:block'/>version of your business.</span>
+          <span className='max-w-[60rem] 2xl:max-w-[30rem] whitespace-break-spaces lg:text-[1.4rem]'>We audit your workflows, build custom AI solutions, and deliver <br className='hidden 2xl:block'/>measurable ROI - making you the most efficient and profitable <br className='hidden 2xl:block'/>version of your business.</span>
         </motion.p>
 
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-lg md:text-xl lg:text-md xl:text-xl text-gray-400 mb-5 md:mb-6 leading-relaxed text-center lg:text-start"
+          className="text-lg md:text-xl lg:text-md xl:text-xl text-gray-400 mb-5 md:mb-6 leading-relaxed text-center 2xl:text-start"
         >
-          <span className='max-w-[30rem] whitespace-break-spaces lg:text-[1.4rem]'>“Not just another AI automation agency. We are your competitive advantage.”</span>
+          <span className='max-w-[40rem] 2xl:max-w-[30rem] whitespace-break-spaces lg:text-[1.4rem]'>“Not just another AI automation agency. We are your competitive advantage.”</span>
         </motion.p>
         
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
-          className="flex flex-col sm:flex-row gap-3 items-center"
+          className="flex flex-col sm:flex-row gap-3 items-center justify-center 2xl:justify-start"
         >
-          <motion.button whileTap={{ scale: 0.95 }} onMouseMove={ handleMouseMove } className="relative w-full lg:max-w-[18rem] h-[3rem] flex items-center justify-center text-black gap-8 overflow-hidden rounded-tl-full rounded-br-full px-4 py-1 bg-gray-200 font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
-            <span className="md:text-black">SEE RESULTS</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform md:text-black" />
-          </motion.button>
+          
+          <AnimatedButton Value="SEE RESULTS" className='relative w-full lg:max-w-[18rem] h-[3rem] flex items-center justify-center overflow-hidden rounded-tl-full rounded-br-full px-4 py-3 font-semibold transition-all duration-300 shadow-md hover:shadow-lg gap-8 text-white'>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-white" />
+          </AnimatedButton>
           <motion.button whileTap={{ scale: 0.95 }} onMouseMove={ handleMouseMove } className="relative w-full lg:max-w-[18rem] h-[3.1rem] flex items-center justify-center bg-gray-200 text-black md:bg-[#000204] md:border-2 border-blue-900/80 md:text-white gap-8 overflow-hidden rounded-tl-full rounded-br-full px-4 py-3 font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
             <span className="md:text-white uppercase">Get My Free AI Audit</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform md:text-white" />
@@ -214,7 +220,7 @@ const HeroSection = () => {
         <div
           className="md:mt-10 xl:mt-20 xl:mb-10 relative hidden md:block"
         >
-          <div className="flex justify-center xl:justify-end items-start xl:-mt-12 bg-scondary max-w-[75rem] xl:min-w-[63.3rem] xl:max-w-[63.3rem] rounded-xl">
+          <div className="flex justify-center lg:justify-start 2xl:justify-end items-start xl:-mt-12 bg-scondary max-w-[90rem] 2xl:min-w-[63.3rem] xl:max-w-[63.3rem] rounded-xl">
           <DashboardPreview />
           </div>
         </div>

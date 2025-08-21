@@ -1,4 +1,5 @@
 import { NotebookPenIcon } from "lucide-react";
+import AnimatedButton from "./AnimatedButton";
 
 function BookDemoGridItem({data}:{data:{
   org:string;
@@ -24,12 +25,13 @@ export default function BookDemo() {
           <p className="text-muted-foreground">
             Zero Engineering Lift | 100+ integrations | Multi-LLM architecture
           </p>
-          <button className="book-demo-btn rounded-tl-full rounded-br-full px-3 py-3 lg:px-13 lg:py-1 mb-3 mt-peers cursor-pointer active:scale-95 scale-100 duration-300 w-fit border-secondary border-2 bg-primary text-primary-foreground text-base sm:text-lg font-bold flex items-center justify-center gap-small">
-            <span>Book a demo</span>
+          <AnimatedButton
+            Value="Book a demo"
+            className="book-demo-btn rounded-tl-full rounded-br-full px-10 py-3 lg:px-13 lg:py-3 mb-3 mt-peers cursor-pointer active:scale-95 scale-100 duration-300 max-w-[20rem] text-primary-foreground text-base sm:text-lg font-bold flex items-center justify-center gap-small">
             <span className="size-5 sm:size-6">
               <NotebookPenIcon className="size-full" />
             </span>
-          </button>
+            </AnimatedButton>
         </div>
         {/* grid */}
         <div className="w-full grid grid-cols-2 gap-small">

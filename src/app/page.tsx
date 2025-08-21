@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import Footer from '@/components/Footer';
 import BookDemo from '@/components/BookDemo';
+import ContactSection from '@/components/contact/ContactSection';
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -25,6 +26,7 @@ export default function Home() {
     <div ref={containerRef} className="text-white overflow-hidden">
       <Header />
       <HeroSection />
+      <ContactSection/>
       <BookDemo/>
       <Footer/>
     </div>

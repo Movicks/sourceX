@@ -39,13 +39,10 @@ const DashboardPreview = () => {
   }, []);
 
   return (
-    <section className="relative">
-      <motion.div 
+    <section className="relative w-full">
+      <div 
         ref={dashboardRef}
         className="w-full mx-auto"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.1 }}
       >
         {/* Dashboard Container */}
         <div className="relative backdrop-blur-xl border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl">
@@ -174,7 +171,7 @@ const DashboardPreview = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
