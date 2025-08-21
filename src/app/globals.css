@@ -26,6 +26,7 @@
 :root {
   /* Core Backgrounds & Text */
   --background: #0e0e10;          /* Deep black for focus and clarity */
+  --gradientBackground: linear-gradient(to right, #6366f1, #38bdf8, #34d399);
   --foreground: #f5f5f7;          /* High-contrast soft white for readability */
 
   /* Brand Primary (CTAs, Links) */
@@ -61,6 +62,7 @@
 @theme inline {
   /* Tokens from root */
   --color-background: var(--background);
+  --color-gradientBackground: var(--gradientBackground);
   --color-foreground: var(--foreground);
 
   --color-primary: var(--primary);
@@ -381,6 +383,10 @@ input:focus-visible {
   color: transparent; /* fallback */
   animation: shine 10s linear infinite;
   /* letter-spacing: 1px; */
+}
+
+.gradient-primary {
+  background: linear-gradient(to right, #6366f1, #38bdf8, #34d399);
 }
 
 @keyframes shine {
