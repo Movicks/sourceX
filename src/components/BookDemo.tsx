@@ -1,5 +1,6 @@
 import { NotebookPenIcon } from "lucide-react";
 import AnimatedButton from "./AnimatedButton";
+import BookDemoBg from "./BookDemoBg";
 
 function BookDemoGridItem({data}:{data:{
   org:string;
@@ -15,8 +16,11 @@ function BookDemoGridItem({data}:{data:{
 export default function BookDemo() {
   return (
     <section className="w-full relative isolate px-peers md:px-container pb-container flex justify-center before:h-1/2 before:absolute before:bg-gradient-to-r before:from-indigo-600 before:via-sky-600 before:to-emerald-600 before:w-full before:left-0 before:bottom-0 before:-z-1">
-      <main className="w-full max-w-6xl bg-accent border border-white/20 isolate shadow-md shadow-background/30 p-sections sm:p-container md:p-sections rounded-xl grid gap-peers grid-cols-1 sm:grid-cols-[1fr_1fr] lg:grid-cols-[3fr_2fr] items-center">
+      <main className="w-full max-w-6xl bg-accent border border-white/20 isolate shadow-md overflow-hidden relative shadow-background/30 p-sections sm:p-container md:p-sections rounded-xl grid gap-peers grid-cols-1 sm:grid-cols-[1fr_1fr] lg:grid-cols-[3fr_2fr] items-center">
         {/* content */}
+        <div className="absolute brightness-50 inset-0 flex items-center justify-center overflow-hidden -z-2 size-full">
+          <BookDemoBg/>
+        </div>
         <div className="w-full flex flex-col gap-peers">
           <h3 className="text-3xl md:text-4xl font-semibold lg:font-bold leading-tight tracking-tight text-gray-900 dark:text-white">
               <span className="bg-gradient-to-r from-indigo-500 via-sky-400 to-emerald-400 bg-clip-text text-transparent">
@@ -36,7 +40,7 @@ export default function BookDemo() {
             </AnimatedButton>
         </div>
         {/* grid */}
-        <div className="w-full grid grid-cols-2 gap-small">
+        <div className="w-full grid grid-cols-2 gap-small backdrop-blur-3xl p-small rounded-lg">
           <BookDemoGridItem data={{
             org:"HIPAA",
             org_text: "Health Insurance Portability and Accountability Act",
