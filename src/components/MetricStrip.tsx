@@ -34,11 +34,11 @@ export default function CredibilityMetrics() {
   return (
     <section
       ref={ref}
-      className="relative w-full bg-black text-white min-h-100 py-16 px-container overflow-hidden"
+      className="relative w-full bg-background text-white min-h-120 py-16 px-container overflow-hidden"
     >
       {/* Background cinematic layers */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-white/5 to-transparent skew-x-12" />
+        <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-primary/5 to-transparent skew-x-12" />
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-tr from-white/5 to-transparent skew-x-12" />
       </div>
 
