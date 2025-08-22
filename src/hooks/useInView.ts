@@ -4,8 +4,8 @@ interface InViewOptions extends IntersectionObserverInit {
   once?: boolean;
 }
 
-export default function useInView({ once = false, ...options }: InViewOptions) {
-  const ref = useRef<HTMLDivElement>(null);
+export default function useInView<T extends HTMLElement>({ once = false, ...options }: InViewOptions) {
+  const ref = useRef<T>(null);
   const [inView, setInView] = useState(false);
   const hasEnteredView = useRef(false); // tracks if it was ever in view
 

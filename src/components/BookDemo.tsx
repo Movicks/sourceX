@@ -40,7 +40,7 @@ export default function BookDemo() {
             </AnimatedButton>
         </div>
         {/* grid */}
-        <div className="w-full grid grid-cols-2 gap-small backdrop-blur-3xl p-small rounded-lg">
+        <div className="w-full grid grid-cols-1 min-[360px]:grid-cols-2 gap-small backdrop-blur-3xl p-small rounded-lg">
           <BookDemoGridItem data={{
             org:"HIPAA",
             org_text: "Health Insurance Portability and Accountability Act",

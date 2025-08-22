@@ -8,16 +8,25 @@
     --fg-color: var(--color-primary);
     @apply animate-bounce-self duration-300;
 }
+.bounce-self-hover:hover{
+    --fg-color: var(--color-primary);
+    @apply animate-bounce-self duration-300;
+}
 .book-demo-btn:hover{
     @apply bg-primary/80;
 }
+.book-demo-grid-item:hover{
+    --shadow-odd: -2px 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), -2px 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    --shadow-even: 2px 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 2px 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    @apply odd:shadow-[var(--shadow-odd)] even:shadow-[var(--shadow-even)] shadow-background/40;
+}
 .book-demo-grid-item{
-    @apply after:duration-500 after:size-full after:absolute after:rounded-md after:left-0 after:top-0 after:bg-primary after:-z-1 after:opacity-0 after:scale-40 after:rotate-45;
-    @apply before:duration-500 before:size-full before:absolute before:rounded-md before:left-0 before:top-0 before:bg-gradient-to-br before:from-primary/70 before:to-transparent before:via-transparent before:via-70% before:blur-2xl before:-z-2 before:opacity-0 before:scale-90;
+    @apply after:duration-500 after:size-full after:absolute after:rounded-md after:left-0 after:top-0 after:bg-gradient-to-r after:from-primary after:to-success after:-z-1 after:opacity-0 after:scale-40 after:rotate-45;
+    @apply before:duration-500 before:size-full before:absolute before:rounded-md odd:before:left-[calc(50%)] even:before:-left-0 before:top-0 before:bg-gradient-to-br odd:before:from-primary/70 even:before:from-success/70 before:to-transparent before:via-transparent before:via-70% before:blur-2xl before:-z-2 before:opacity-0 before:scale-90;
     @apply w-full p-peers rounded-md relative bg-secondary flex flex-col gap-small items-center justify-center;
 }
 .book-demo-grid-item:hover{
     @apply [--size:var(--spacing-xtrasmall)] sm:[--size:4px];
-    @apply after:left-[var(--size)] after:top-[var(--size)] after:opacity-100 after:scale-100 after:rotate-0;
-    @apply before:-left-[var(--size)] before:-top-[var(--size)] before:opacity-100 before:scale-100;
+    @apply odd:after:-left-[var(--size)] even:after:left-[var(--size)] after:top-[var(--size)] after:opacity-100 after:scale-100 after:rotate-0;
+    @apply odd:before:left-[calc(50%-var(--size))] even:before:-left-[var(--size)] before:-top-[var(--size)] before:opacity-100 before:scale-100;
 }
