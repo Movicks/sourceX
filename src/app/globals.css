@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "../assets/css/hoverStyles.css";
+@import "../assets/css/pattern.css";
+
 
 :root {
   --spacing: 0.25rem; /* 4px base unit */

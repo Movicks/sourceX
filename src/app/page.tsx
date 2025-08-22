@@ -7,6 +7,7 @@ import HeroSection from '@/components/HeroSection';
 import Footer from '@/components/Footer';
 import BookDemo from '@/components/BookDemo';
 import ContactSection from '@/components/contact/ContactSection';
+import CredibilityMetrics from '@/components/MetricStrip';
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,6 +28,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <ContactSection/>
+      <CredibilityMetrics/>
       <BookDemo/>
       <Footer/>
     </div>
