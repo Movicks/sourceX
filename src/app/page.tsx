@@ -1,5 +1,6 @@
 "use client";
 
+
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Header from "@/components/Header";
@@ -8,6 +9,10 @@ import Footer from "@/components/Footer";
 import BookDemo from "@/components/BookDemo";
 import ContactSection from "@/components/contact/ContactSection";
 import CredibilityMetrics from "@/components/MetricStrip";
+
+import BeforeAfterCTA from '@/components/HandCardSection';
+
+
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,6 +32,7 @@ export default function Home() {
     <div ref={containerRef} className="text-white overflow-hidden">
       <Header />
       <HeroSection />
+      <BeforeAfterCTA/>
       <ContactSection/>
 
       <div className="w-full relative isolate">
