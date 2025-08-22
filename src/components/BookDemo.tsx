@@ -6,7 +6,7 @@ function BookDemoGridItem({data}:{data:{
   org_text:string;
   image:string;
 }}) {
-  return <div className="book-demo-grid-item">
+  return <div className="book-demo-grid-item text-gray-400 !bg-[#000204]">
     <span className="size-15 rounded-full bg-accent"></span>
     <h4 className="text-base text-center font-bold">{data.org}</h4>
     <p className="text-center text-xs">{data.org_text}</p>
@@ -15,12 +15,14 @@ function BookDemoGridItem({data}:{data:{
 export default function BookDemo() {
   return (
     <section className="w-full relative isolate px-peers md:px-container pb-container flex justify-center before:h-1/2 before:absolute before:bg-gradient-to-r before:from-indigo-600 before:via-sky-600 before:to-emerald-600 before:w-full before:left-0 before:bottom-0 before:-z-1">
-      <main className="w-full max-w-6xl bg-accent isolate shadow-md shadow-background/30 p-sections sm:p-container md:p-sections rounded-xl grid gap-peers grid-cols-1 sm:grid-cols-[1fr_1fr] lg:grid-cols-[3fr_2fr] items-center">
+      <main className="w-full max-w-6xl bg-accent border border-white/20 isolate shadow-md shadow-background/30 p-sections sm:p-container md:p-sections rounded-xl grid gap-peers grid-cols-1 sm:grid-cols-[1fr_1fr] lg:grid-cols-[3fr_2fr] items-center">
         {/* content */}
         <div className="w-full flex flex-col gap-peers">
-          <h3 className="text-3xl md:text-4xl font-bold gradient-headers">
-            Intelligent Human-like AI Agents Built for Enterprise Scale &
-            Security
+          <h3 className="text-3xl md:text-4xl font-semibold lg:font-bold leading-tight tracking-tight text-gray-900 dark:text-white">
+              <span className="bg-gradient-to-r from-indigo-500 via-sky-400 to-emerald-400 bg-clip-text text-transparent">
+              Intelligent Human-like AI Agents Built for Enterprise Scale &
+              Security
+              </span>
           </h3>
           <p className="text-muted-foreground">
             Zero Engineering Lift | 100+ integrations | Multi-LLM architecture
