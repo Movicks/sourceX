@@ -27,7 +27,7 @@ export default function Home() {
     <div ref={containerRef} className="text-white overflow-hidden">
       <Header />
       <HeroSection />
-      {/* <ContactSection/> */}
+      <ContactSection/>
       <CredibilityMetrics/>
       <BookDemo/>
       <Footer/>
