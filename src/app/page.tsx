@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import Footer from '@/components/Footer';
 import BookDemo from '@/components/BookDemo';
+import ContactSection from '@/components/contact/ContactSection';
 import CredibilityMetrics from '@/components/MetricStrip';
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
     <div ref={containerRef} className="text-white overflow-hidden">
       <Header />
       <HeroSection />
+      {/* <ContactSection/> */}
       <CredibilityMetrics/>
       <BookDemo/>
       <Footer/>
