@@ -26,10 +26,10 @@ const socialLinks = [
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="w-full bg-secondary text-sm relative flex gap-peers flex-col-reverse lg:flex-row flex-wrap lg:flex-nowrap items-center justify-between px-container py-small">
+    <footer className="w-full bg-secondary text-sm relative flex gap-peers flex-col-reverse lg:flex-row flex-wrap lg:flex-nowrap items-center justify-between px-container py-peers sm:py-small">
       <div className="w-full flex items-center flex-col-reverse sm:flex-row justify-between gap-peers">
         {/* copyright */}
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground text-center">
           Copyright &copy; {year} SourceX. All rights reserved
         </p>
         {/* tos-pp */}

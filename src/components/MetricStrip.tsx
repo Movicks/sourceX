@@ -27,25 +27,23 @@ const metrics = [
 ];
 
 export default function CredibilityMetrics() {
-  const { ref, inView } = useInView({ threshold: 0.1 });
+  const { ref, inView } = useInView({ threshold: 0.4, once:true });
 
 
 
   return (
     <section
       ref={ref}
-      className="relative w-full bg-background text-white min-h-120 py-16 px-container overflow-hidden"
+      className="relative w-full text-white min-h-screen flex flex-col items-center gap-sections justify-center py-sections px-container overflow-hidden"
     >
-      {/* Background cinematic layers */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-primary/5 to-transparent skew-x-12" />
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-tr from-white/5 to-transparent skew-x-12" />
-      </div>
-
       {/* Headline */}
-      <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-semibold mb-10 relative z-10">
-        We don’t sell <span className="text-accent">AI</span>. We sell{" "}
-        <span className="italic text-accent">Results.</span>
+      <h2 className={
+        cn(
+          "text-center text-2xl sm:text-3xl md:text-4xl font-semibold mb-10 relative z-10",
+        )
+      }>
+        We don’t sell <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-success">AI</span>. We sell{" "}
+        <span className="italic text-transparent bg-clip-text bg-gradient-to-bl from-primary to-success">Results.</span>
       </h2>
 
       {/* Metrics */}
@@ -58,7 +56,7 @@ export default function CredibilityMetrics() {
             }}
               className={
                 cn(
-                    "text-5xl font-bold text-white duration-600",
+                    "text-5xl font-bold text-white duration-300",
                     {
                         "opacity-100 translate-y-0":inView,
                         "opacity-0 translate-y-20":!inView
